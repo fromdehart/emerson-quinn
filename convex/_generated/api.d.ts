@@ -13,6 +13,9 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as appointmentPrep from "../appointmentPrep.js";
+import type * as appointmentPrepActions from "../appointmentPrepActions.js";
+import type * as contact from "../contact.js";
 import type * as http from "../http.js";
 import type * as leads from "../leads.js";
 import type * as openai from "../openai.js";
@@ -31,6 +34,9 @@ import type * as votes from "../votes.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  appointmentPrep: typeof appointmentPrep;
+  appointmentPrepActions: typeof appointmentPrepActions;
+  contact: typeof contact;
   http: typeof http;
   leads: typeof leads;
   openai: typeof openai;

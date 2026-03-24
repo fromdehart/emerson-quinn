@@ -34,4 +34,19 @@ export default defineSchema({
   })
     .index("by_challengeId", ["challengeId"])
     .index("by_challenge_and_email", ["challengeId", "email"]),
+
+  contactSubmissions: defineTable({
+    name: v.string(),
+    email: v.string(),
+    businessType: v.string(),
+    message: v.string(),
+    createdAt: v.number(),
+  }).index("by_createdAt", ["createdAt"]),
+
+  appointmentPrep: defineTable({
+    transcript_raw: v.string(),
+    summary_generated: v.string(),
+    summary_final: v.string(),
+    createdAt: v.number(),
+  }).index("by_createdAt", ["createdAt"]),
 });
