@@ -20,10 +20,7 @@ import type * as http from "../http.js";
 import type * as leads from "../leads.js";
 import type * as openai from "../openai.js";
 import type * as resend from "../resend.js";
-import type * as telegram from "../telegram.js";
-import type * as telegramClient from "../telegramClient.js";
 import type * as tracking from "../tracking.js";
-import type * as votes from "../votes.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -41,10 +38,7 @@ declare const fullApi: ApiFromModules<{
   leads: typeof leads;
   openai: typeof openai;
   resend: typeof resend;
-  telegram: typeof telegram;
-  telegramClient: typeof telegramClient;
   tracking: typeof tracking;
-  votes: typeof votes;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
