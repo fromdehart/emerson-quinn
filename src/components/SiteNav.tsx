@@ -7,7 +7,7 @@ const links = [
   { href: "#how-we-work", label: "How We Work" },
   { href: "#why-us", label: "Why Us" },
   { href: "#industries", label: "Industries" },
-  { href: "#results", label: "Results" },
+  { href: "#results", label: "Success" },
 ];
 
 export default function SiteNav() {
@@ -67,7 +67,7 @@ export default function SiteNav() {
             className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-[var(--brand-teal)] hover:bg-teal-800 transition-colors text-center"
             onClick={() => setMobileOpen(false)}
           >
-            Book a Consultation
+            Free Consultation
           </a>
         </div>
       )}

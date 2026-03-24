@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckCircle2 } from "lucide-react";
 
+const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL ?? "#contact";
+
 export default function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -60,10 +62,31 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-white py-24">
       <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-[var(--brand-dark)]">Let's Talk</h2>
-        <p className="text-lg text-slate-600 mt-4 mb-10">
-          The first conversation is free — no pitch, just a real look at what might help. Fill out
-          the form and we'll be in touch within one business day.
+        <h2 className="text-4xl font-bold text-[var(--brand-dark)] text-center sm:text-left">
+          Let&apos;s make your business stronger — together.
+        </h2>
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 mt-8 mb-10">
+          <a
+            href={CALENDLY_URL}
+            className="inline-flex justify-center px-8 py-4 rounded-xl font-semibold text-white bg-[var(--brand-teal)] hover:bg-teal-800 transition-colors shadow-md text-center"
+          >
+            Schedule a Free, No-Risk Consultation
+          </a>
+          <span className="hidden sm:inline text-slate-300">|</span>
+          <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-sm font-medium">
+            <a href="#contact-form" className="text-[var(--brand-teal)] hover:underline">
+              Contact Us
+            </a>
+            <span className="text-slate-300">|</span>
+            <a href="#how-we-work" className="text-[var(--brand-teal)] hover:underline">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <p id="contact-form" className="text-lg text-slate-600 mb-10 scroll-mt-28">
+          Prefer to write first? The first conversation is free — no pitch, just a real look at what
+          might help. Fill out the form and we&apos;ll be in touch within one business day.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">

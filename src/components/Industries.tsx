@@ -5,22 +5,22 @@ const industries: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: Wrench,
     title: "Trades & Home Services",
-    body: "Scheduling, dispatch, and customer follow-up that keeps jobs moving and phones ringing.",
+    body: "HVAC, plumbing, electrical, landscaping, pool care, and more.",
   },
   {
     icon: Building2,
     title: "Property Management",
-    body: "Maintenance tracking, tenant communication, and reporting without the spreadsheet chaos.",
+    body: "Residential, HOA, vacation rentals, and maintenance services.",
   },
   {
     icon: HeartPulse,
     title: "Wellness & Fitness",
-    body: "Booking, retention, and staff coordination that lets you focus on your clients.",
+    body: "Gyms, yoga/pilates studios, personal training, wellness clinics.",
   },
   {
     icon: HardHat,
     title: "Construction & Contractors",
-    body: "Project tracking, subcontractor coordination, and job costing that keeps every site on budget.",
+    body: "Remodeling, flooring, kitchen/bath, painting, and general contracting.",
   },
 ];
 
@@ -28,9 +28,9 @@ export default function Industries() {
   return (
     <section id="industries" className="bg-white py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-[var(--brand-dark)]">Industries We Serve</h2>
-        <p className="text-lg text-slate-500 mt-4 mb-16">
-          We work where things get complicated — and we know your world well enough to help.
+        <h2 className="text-4xl font-bold text-[var(--brand-dark)]">Industries We Partner With</h2>
+        <p className="text-lg text-slate-500 mt-4 mb-4 max-w-2xl mx-auto">
+          We focus on small, family-run businesses where smart improvements make a real difference:
         </p>
       </div>
 
@@ -50,6 +50,13 @@ export default function Industries() {
             </div>
           );
         })}
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 mt-14 text-center">
+        <p className="text-lg font-medium text-[var(--brand-slate)] italic leading-relaxed">
+          &ldquo;We work in industries that are durable, hands-on, and essential — businesses that
+          touch lives every day.&rdquo;
+        </p>
       </div>
     </section>
   );

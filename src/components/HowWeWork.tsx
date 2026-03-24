@@ -2,17 +2,17 @@ const steps = [
   {
     number: "01",
     title: "Listen & Learn",
-    body: "We start by understanding your business from the inside out — your people, your bottlenecks, your goals. No assumptions.",
+    body: "We start by understanding your business, your challenges, and what matters most to your team and your family.",
   },
   {
     number: "02",
     title: "Collaborate & Improve",
-    body: "We work alongside you, not above you, to build systems that fit how your team actually operates.",
+    body: "Together, we identify opportunities to work smarter — using practical systems, AI, and tools — to make your operations easier and more profitable.",
   },
   {
     number: "03",
     title: "Grow & Measure",
-    body: "We track what matters, adjust as you scale, and make sure the improvements stick long after we're done.",
+    body: "You only invest in results. We focus on measurable improvements in revenue, efficiency, or customer experience, so you can see real impact.",
   },
 ];
 
@@ -20,10 +20,12 @@ export default function HowWeWork() {
   return (
     <section id="how-we-work" className="bg-white py-24">
       <div className="max-w-5xl mx-auto px-6 text-center">
+        <p className="text-sm font-semibold tracking-widest uppercase text-[var(--brand-teal)] mb-3">
+          Our Approach
+        </p>
         <h2 className="text-4xl font-bold text-[var(--brand-dark)]">How We Work</h2>
-        <p className="text-lg text-slate-500 max-w-2xl mx-auto mt-4">
-          We keep it simple. No complicated frameworks, no 90-day engagement decks. Just a clear
-          process built around your business.
+        <p className="text-lg font-medium text-[var(--brand-dark)] mt-4">
+          Simple, Human-Focused Process:
         </p>
       </div>
 
@@ -40,6 +42,15 @@ export default function HowWeWork() {
             <p className="text-slate-600 leading-relaxed">{step.body}</p>
           </div>
         ))}
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 mt-16">
+        <div className="border-l-4 border-[var(--brand-teal)] pl-6 text-left">
+          <p className="text-xl font-medium text-[var(--brand-slate)] italic leading-snug">
+            &ldquo;We&apos;re not here to sell a service — we&apos;re here to partner with you to make
+            your business stronger, smarter, and ready for the future.&rdquo;
+          </p>
+        </div>
       </div>
     </section>
   );
