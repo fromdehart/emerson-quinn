@@ -69,7 +69,8 @@ export const submitContact = action({
       message,
     });
 
-    const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL;
+    const notifyEmail =
+      process.env.CONTACT_NOTIFY_EMAIL?.trim() || "emersonandquinn@gmail.com";
     if (notifyEmail) {
       await ctx.scheduler.runAfter(0, api.resend.sendEmail, {
         to: notifyEmail,

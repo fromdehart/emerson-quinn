@@ -7,6 +7,14 @@
     <meta name="description" content="Emerson and Quinn partners with small businesses to improve how they work, grow sustainably, and stay competitive — using AI, systems, and practical strategies." />
     <meta name="author" content="Emerson &amp; Quinn" />
 
+    <!-- Calendly inline embed: styles + early script load -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <link
+      rel="preload"
+      href="https://assets.calendly.com/assets/external/widget.js"
+      as="script"
+    />
+
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -29,6 +37,7 @@
 
   <body>
     <div id="root"></div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

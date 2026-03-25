@@ -1,15 +1,15 @@
+import familyCartoon from "@/assets/familyImg-cartoon.jpeg";
+
 export default function WhyWeDoThis() {
   return (
     <section id="why-us" className="bg-[var(--brand-teal-light)] py-20 sm:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start max-w-5xl mx-auto px-6">
-        <div>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200/60 aspect-[4/3]">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-stretch gap-10 px-6 md:grid-cols-2 md:gap-12">
+        <div className="flex min-h-0 w-full md:h-full">
+          <div className="flex min-h-0 w-full flex-1 items-center justify-center rounded-2xl bg-white/50 p-4 shadow-xl ring-1 ring-slate-200/60 sm:p-6 md:min-h-0 md:h-full">
             <img
-              src="/images/why-we-do-this.jpg"
-              alt="Family together at home, representing generations and community"
-              className="absolute inset-0 w-full h-full object-cover"
-              width={1200}
-              height={800}
+              src={familyCartoon}
+              alt="Illustration of a family — from our family to yours"
+              className="h-auto w-full max-w-full object-contain md:max-h-full md:w-auto"
               loading="lazy"
               decoding="async"
             />

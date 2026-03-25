@@ -4,7 +4,7 @@ import HowWeWork from "@/components/HowWeWork";
 import WhyWeDoThis from "@/components/WhyWeDoThis";
 import Industries from "@/components/Industries";
 import Results from "@/components/Results";
-import ContactSection from "@/components/ContactSection";
+import ScheduleSection from "@/components/ScheduleSection";
 import SiteFooter from "@/components/SiteFooter";
 
 export default function Index() {
@@ -17,7 +17,7 @@ export default function Index() {
         <WhyWeDoThis />
         <Industries />
         <Results />
-        <ContactSection />
+        <ScheduleSection />
       </main>
       <SiteFooter />
     </div>
