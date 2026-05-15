@@ -3,6 +3,7 @@ import { ConvexProvider } from "convex/react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { convex } from "./lib/convexClient";
 import Index from "./pages/Index";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BeforeWeMeet from "./pages/BeforeWeMeet";
 
@@ -26,6 +27,7 @@ const App = () => {
         <HashScroll />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/before-we-meet" element={<BeforeWeMeet />} />
         </Routes>

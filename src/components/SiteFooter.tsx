@@ -13,6 +13,10 @@ export default function SiteFooter() {
         Schedule a Free, No-Risk Consultation
       </Link>
       <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm mb-6">
+        <Link to="/about" className="hover:text-slate-200 transition-colors">
+          About Mike
+        </Link>
+        <span className="text-slate-600">|</span>
         <Link to="/contact" className="hover:text-slate-200 transition-colors">
           Contact Us
         </Link>
