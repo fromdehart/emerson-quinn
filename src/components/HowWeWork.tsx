@@ -7,7 +7,7 @@ const steps = [
   {
     number: "02",
     title: "Collaborate & Improve",
-    body: "Together, we identify opportunities to work smarter — using practical systems, AI, and tools — to make your operations easier and more profitable.",
+    body: "We work alongside you to identify repetitive tasks, communication bottlenecks, and opportunities for AI automation — then build systems that fit how your team actually operates.",
   },
   {
     number: "03",
@@ -47,8 +47,8 @@ export default function HowWeWork() {
       <div className="max-w-3xl mx-auto px-6 mt-16">
         <div className="border-l-4 border-[var(--brand-teal)] pl-6 text-left">
           <p className="text-xl font-medium text-[var(--brand-slate)] italic leading-snug">
-            &ldquo;We&apos;re not here to sell a service — we&apos;re here to partner with you to make
-            your business stronger, smarter, and ready for the future.&rdquo;
+            &ldquo;We&apos;re not here to sell a service — we&apos;re here to partner with you to
+            make your business stronger, smarter, and ready for the future.&rdquo;
           </p>
         </div>
       </div>

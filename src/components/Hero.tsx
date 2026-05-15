@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpeg";
+
+const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL ?? "#contact";
 
 export default function Hero() {
   return (
@@ -16,21 +17,26 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 lg:items-center">
         <div className="order-2 lg:order-1">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--brand-dark)] leading-tight">
-            Helping Family Businesses Adapt and Grow
+            AI &amp; Automation for Family Businesses
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mt-4 sm:mt-5 leading-relaxed">
-            At Emerson and Quinn, we partner with small businesses to improve how they work, grow
-            sustainably, and stay competitive using AI, systems, and practical strategies.</p> 
-          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mt-4 sm:mt-5 leading-relaxed">
-              From our family to yours, we&apos;re here to learn, improve, and transform together.
+            We help small businesses reduce repetitive work, improve operations, and save time using
+            practical AI tools and automation.
+          </p>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mt-4 leading-relaxed">
+            From our family to yours, we make AI approachable, useful, and built around the way your
+            business actually works.
           </p>
           <div className="flex flex-wrap gap-4 items-center mt-10">
-            <Link
-              to="/#schedule"
+            <a
+              href={CALENDLY_URL}
               className="px-8 py-4 rounded-xl font-semibold text-white bg-[var(--brand-teal)] hover:bg-teal-800 transition-colors shadow-md"
             >
-              Start With a Free Consultation
-            </Link>
+              Book a Free AI Consultation
+            </a>
+            <a href="#how-we-work" className="text-[var(--brand-teal)] font-medium hover:underline">
+              See how we work →
+            </a>
           </div>
         </div>
 

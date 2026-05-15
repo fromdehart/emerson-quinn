@@ -27,8 +27,8 @@ export default function WhyWeDoThis() {
             future where families — like ours and yours — can thrive.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
-            We started this business to learn how to harness AI, automation, and new ways of working,
-            so our daughters grow up in a world where opportunities are limitless.
+            We created Emerson &amp; Quinn because we believe family businesses deserve practical,
+            trustworthy guidance as AI reshapes how businesses operate.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
             We believe family-run businesses are the heart of communities, and helping them stay
