@@ -33,7 +33,8 @@ const workflows = [
 const tiers = [
   {
     name: "Starter",
-    price: "$250",
+    price: "$249",
+    planValue: "Starter – $249 (2 workflows)",
     workflows: 2,
     description: "Pick any two workflows and we'll get them live. Great for testing AI before going all-in.",
     includes: [
@@ -47,6 +48,7 @@ const tiers = [
   {
     name: "Growth",
     price: "$450",
+    planValue: "Growth – $450 (7 workflows)",
     workflows: 7,
     description: "The most popular starting point — covers your biggest time drains across finance, sales, or operations.",
     includes: [
@@ -60,7 +62,8 @@ const tiers = [
   },
   {
     name: "Complete",
-    price: "$950",
+    price: "$975",
+    planValue: "Complete – $975 (15 workflows)",
     workflows: 15,
     description: "Every workflow Anthropic built for small business, fully configured for how your business runs.",
     includes: [
@@ -92,10 +95,14 @@ const whyUs = [
   },
 ];
 
-function ContactForm() {
+interface ContactFormProps {
+  plan: string;
+  setPlan: (plan: string) => void;
+}
+
+function ContactForm({ plan, setPlan }: ContactFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [plan, setPlan] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -134,7 +141,7 @@ function ContactForm() {
         <CheckCircle2 className="w-16 h-16 text-[var(--brand-teal)] mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-[var(--brand-dark)]">You're on the list!</h3>
         <p className="text-slate-600 mt-3 max-w-sm mx-auto">
-          Thanks for reaching out. We'll be in touch within one business day to schedule your free setup call.
+          Thanks for reaching out. We'll be in touch within one business day to schedule your setup call.
         </p>
       </div>
     );
@@ -177,9 +184,9 @@ function ContactForm() {
           className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-teal)]"
         >
           <option value="" disabled>— Select a plan —</option>
-          <option value="Starter – $250 (2 workflows)">Starter – $250 (2 workflows)</option>
-          <option value="Growth – $450 (7 workflows)">Growth – $450 (7 workflows)</option>
-          <option value="Complete – $950 (15 workflows)">Complete – $950 (15 workflows)</option>
+          {tiers.map((t) => (
+            <option key={t.planValue} value={t.planValue}>{t.planValue}</option>
+          ))}
           <option value="Not sure yet">Not sure yet</option>
         </select>
       </div>
@@ -201,7 +208,7 @@ function ContactForm() {
         disabled={status === "loading"}
         className="w-full py-4 rounded-xl font-semibold text-white bg-[var(--brand-teal)] hover:bg-teal-800 disabled:opacity-60 transition-colors text-lg"
       >
-        {status === "loading" ? "Submitting…" : "Get My Free Setup Consultation"}
+        {status === "loading" ? "Submitting…" : "Get Started Today"}
       </button>
 
       {status === "error" && (
@@ -216,6 +223,13 @@ function ContactForm() {
 }
 
 export default function ClaudeForSmallBusiness() {
+  const [plan, setPlan] = useState("");
+
+  const selectPlan = (planValue: string) => {
+    setPlan(planValue);
+    document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteNav />
@@ -236,7 +250,7 @@ export default function ClaudeForSmallBusiness() {
             href="#get-started"
             className="inline-block bg-[var(--brand-teal)] hover:bg-teal-600 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors"
           >
-            Get a Free Setup Consultation
+            Packages starting at $249
           </a>
         </div>
       </section>
@@ -326,7 +340,7 @@ export default function ClaudeForSmallBusiness() {
           <ol className="space-y-8">
             {[
               { n: "1", title: "Audit your current tools", body: "We map what software you use, what's manual, and where Claude can save you the most time." },
-              { n: "2", title: "Configure Claude for your workflows", body: "We set up the 15 built-in workflows and customize them to match how your business actually operates." },
+              { n: "2", title: "Configure Claude for your workflows", body: "We set up your chosen workflows and customize them to match how your business actually operates." },
               { n: "3", title: "Connect your integrations", body: "We handle the QuickBooks, HubSpot, PayPal, and Google Workspace connections — no IT department required." },
               { n: "4", title: "Train your team", body: "A hands-on walkthrough so you and your team know exactly how to use it from day one." },
               { n: "5", title: "Ongoing support", body: "We're available to troubleshoot, expand workflows, and add new integrations as your business grows." },
@@ -346,7 +360,7 @@ export default function ClaudeForSmallBusiness() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-white py-20 px-6">
+      <section className="bg-slate-50 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-[var(--brand-dark)] text-center mb-4">
             Simple, flat-rate pricing
@@ -362,7 +376,7 @@ export default function ClaudeForSmallBusiness() {
                 className={`rounded-2xl p-8 flex flex-col ${
                   tier.highlight
                     ? "bg-[var(--brand-teal)] text-white shadow-xl ring-2 ring-[var(--brand-teal)]"
-                    : "bg-slate-50 text-[var(--brand-dark)] border border-slate-200"
+                    : "bg-white text-[var(--brand-dark)] border border-slate-200"
                 }`}
               >
                 {tier.highlight && (
@@ -388,16 +402,16 @@ export default function ClaudeForSmallBusiness() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#get-started"
-                  className={`block text-center py-3 rounded-xl font-semibold text-sm transition-colors ${
+                <button
+                  onClick={() => selectPlan(tier.planValue)}
+                  className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-colors ${
                     tier.highlight
                       ? "bg-white text-[var(--brand-teal)] hover:bg-teal-50"
                       : "bg-[var(--brand-teal)] text-white hover:bg-teal-800"
                   }`}
                 >
                   Get Started
-                </a>
+                </button>
               </div>
             ))}
           </div>
@@ -405,16 +419,16 @@ export default function ClaudeForSmallBusiness() {
       </section>
 
       {/* Form CTA */}
-      <section id="get-started" className="bg-slate-50 py-20 px-6">
+      <section id="get-started" className="bg-white py-20 px-6">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold text-[var(--brand-dark)] text-center mb-3">
             Ready to get set up?
           </h2>
           <p className="text-slate-600 text-center mb-10">
-            Tell us about your business and the tools you use. We'll reach out within one business day to schedule a free consultation.
+            Tell us about your business and the tools you use. We'll reach out within one business day to schedule your setup call.
           </p>
-          <div className="bg-white rounded-2xl shadow-sm p-8">
-            <ContactForm />
+          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-8">
+            <ContactForm plan={plan} setPlan={setPlan} />
           </div>
         </div>
       </section>
