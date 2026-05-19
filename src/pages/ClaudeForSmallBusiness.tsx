@@ -30,6 +30,50 @@ const workflows = [
   },
 ];
 
+const tiers = [
+  {
+    name: "Starter",
+    price: "$250",
+    workflows: 2,
+    description: "Pick any two workflows and we'll get them live. Great for testing AI before going all-in.",
+    includes: [
+      "Discovery call to choose your 2 workflows",
+      "Integration setup for required tools",
+      "Configuration & testing",
+      "1-hour team walkthrough",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Growth",
+    price: "$450",
+    workflows: 7,
+    description: "The most popular starting point — covers your biggest time drains across finance, sales, or operations.",
+    includes: [
+      "Discovery call to prioritize workflows",
+      "Integration setup for required tools",
+      "Configuration & testing of all 7",
+      "1-hour team walkthrough",
+      "30-day email support",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Complete",
+    price: "$950",
+    workflows: 15,
+    description: "Every workflow Anthropic built for small business, fully configured for how your business runs.",
+    includes: [
+      "Full audit of your current tools & processes",
+      "All integrations connected",
+      "All 15 workflows configured & tested",
+      "Team training session",
+      "60-day email support",
+    ],
+    highlight: false,
+  },
+];
+
 const whyUs = [
   {
     icon: Zap,
@@ -51,6 +95,7 @@ const whyUs = [
 function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [plan, setPlan] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -60,7 +105,7 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
+    if (!name.trim() || !email.trim() || !plan || !message.trim()) {
       setStatus("error");
       setErrorMessage("Please fill in all fields before submitting.");
       return;
@@ -74,7 +119,7 @@ function ContactForm() {
         name,
         email,
         businessType: "Claude for Small Business",
-        message: `${message}\n\n[Source: Claude for Small Business page]`,
+        message: `Plan interested in: ${plan}\n\n${message}\n\n[Source: Claude for Small Business page]`,
       });
       setStatus("success");
     } catch (err) {
@@ -121,6 +166,22 @@ function ContactForm() {
           required
           className="mt-1"
         />
+      </div>
+
+      <div>
+        <Label htmlFor="csb-plan">Which plan are you interested in?</Label>
+        <select
+          id="csb-plan"
+          value={plan}
+          onChange={(e) => setPlan(e.target.value)}
+          className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-teal)]"
+        >
+          <option value="" disabled>— Select a plan —</option>
+          <option value="Starter – $250 (2 workflows)">Starter – $250 (2 workflows)</option>
+          <option value="Growth – $450 (7 workflows)">Growth – $450 (7 workflows)</option>
+          <option value="Complete – $950 (15 workflows)">Complete – $950 (15 workflows)</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
       </div>
 
       <div>
@@ -281,6 +342,65 @@ export default function ClaudeForSmallBusiness() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[var(--brand-dark)] text-center mb-4">
+            Simple, flat-rate pricing
+          </h2>
+          <p className="text-slate-600 text-center max-w-xl mx-auto mb-12">
+            No hourly billing, no surprises. Pick the tier that fits where you are today — you can always add more later.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-8">
+            {tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={`rounded-2xl p-8 flex flex-col ${
+                  tier.highlight
+                    ? "bg-[var(--brand-teal)] text-white shadow-xl ring-2 ring-[var(--brand-teal)]"
+                    : "bg-slate-50 text-[var(--brand-dark)] border border-slate-200"
+                }`}
+              >
+                {tier.highlight && (
+                  <span className="text-xs font-semibold uppercase tracking-wider bg-white/20 text-white px-3 py-1 rounded-full self-start mb-4">
+                    Most Popular
+                  </span>
+                )}
+                <div className="mb-1 text-sm font-semibold uppercase tracking-wider opacity-70">
+                  {tier.name}
+                </div>
+                <div className="text-4xl font-bold mb-1">{tier.price}</div>
+                <div className={`text-sm mb-4 ${tier.highlight ? "text-teal-100" : "text-slate-500"}`}>
+                  {tier.workflows} workflows configured
+                </div>
+                <p className={`text-sm mb-6 ${tier.highlight ? "text-teal-50" : "text-slate-600"}`}>
+                  {tier.description}
+                </p>
+                <ul className="space-y-2 mb-8 flex-1">
+                  {tier.includes.map((item) => (
+                    <li key={item} className={`flex items-start gap-2 text-sm ${tier.highlight ? "text-teal-50" : "text-slate-600"}`}>
+                      <span className={tier.highlight ? "text-white" : "text-[var(--brand-teal)]"}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#get-started"
+                  className={`block text-center py-3 rounded-xl font-semibold text-sm transition-colors ${
+                    tier.highlight
+                      ? "bg-white text-[var(--brand-teal)] hover:bg-teal-50"
+                      : "bg-[var(--brand-teal)] text-white hover:bg-teal-800"
+                  }`}
+                >
+                  Get Started
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
