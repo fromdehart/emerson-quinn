@@ -24,6 +24,10 @@ export default function SiteFooter() {
         <Link to="/#how-we-work" className="hover:text-slate-200 transition-colors">
           Learn More
         </Link>
+        <span className="text-slate-600">|</span>
+        <Link to="/anti-spam-policy" className="hover:text-slate-200 transition-colors">
+          Anti-Spam Policy
+        </Link>
       </div>
       <p className="text-sm text-slate-500">
         &copy; {new Date().getFullYear()} From DeHart. All rights reserved.
