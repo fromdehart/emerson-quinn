@@ -25,6 +25,10 @@ export default function SiteFooter() {
           Learn More
         </Link>
         <span className="text-slate-600">|</span>
+        <Link to="/claude-for-small-business" className="hover:text-slate-200 transition-colors">
+          Claude for Small Business
+        </Link>
+        <span className="text-slate-600">|</span>
         <Link to="/anti-spam-policy" className="hover:text-slate-200 transition-colors">
           Anti-Spam Policy
         </Link>
