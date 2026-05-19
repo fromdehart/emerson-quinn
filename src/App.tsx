@@ -6,6 +6,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BeforeWeMeet from "./pages/BeforeWeMeet";
+import AntiSpamPolicy from "./pages/AntiSpamPolicy";
 
 function HashScroll() {
   const location = useLocation();
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/before-we-meet" element={<BeforeWeMeet />} />
+          <Route path="/anti-spam-policy" element={<AntiSpamPolicy />} />
         </Routes>
       </BrowserRouter>
     </ConvexProvider>

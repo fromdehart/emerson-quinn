@@ -18,7 +18,7 @@ const bioParagraphs: BioParagraph[] = [
     text: "My dad is an engineer, and I think I inherited a lot of his curiosity about how things work and how problems can be solved thoughtfully and creatively. That curiosity has shaped the way I approach both technology and business: stay practical, keep learning, and focus on solutions that genuinely help people.",
   },
   {
-    text: "That same mindset is a big part of why Emerson & Quinn exists.",
+    text: "That same mindset is a big part of why From DeHart exists.",
     emphasis: true,
   },
   {
@@ -53,7 +53,7 @@ export default function About() {
           {/* Text — order-2 on mobile so photo leads on small screens? No — text first per spec */}
           <div className="order-1">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--brand-teal)]">
-              Founder, Emerson &amp; Quinn
+              Founder, From DeHart
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-[var(--brand-dark)] sm:text-5xl lg:text-6xl">
               Meet Your AI &amp; Technology Partner
@@ -88,7 +88,7 @@ export default function About() {
               {MIKE_PHOTO ? (
                 <img
                   src={MIKE_PHOTO}
-                  alt="Mike — Founder of Emerson & Quinn"
+                  alt="Mike — Founder of From DeHart"
                   className="h-auto w-full rounded-3xl object-cover shadow-2xl ring-1 ring-slate-200/80"
                 />
               ) : (

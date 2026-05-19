@@ -26,7 +26,7 @@ export default function SiteFooter() {
         </Link>
       </div>
       <p className="text-sm text-slate-500">
-        &copy; {new Date().getFullYear()} Emerson &amp; Quinn. All rights reserved.
+        &copy; {new Date().getFullYear()} From DeHart. All rights reserved.
       </p>
     </footer>
   );

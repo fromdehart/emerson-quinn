@@ -17,7 +17,7 @@ export default function SiteNav() {
     <nav className="sticky top-0 z-50 backdrop-blur-sm bg-white/90 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="font-semibold text-lg text-[var(--brand-teal)]">
-          Emerson &amp; Quinn
+          From DeHart
         </Link>
 
         {/* Desktop links */}

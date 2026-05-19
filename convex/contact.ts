@@ -74,7 +74,7 @@ export const submitContact = action({
     if (notifyEmail) {
       await ctx.scheduler.runAfter(0, api.resend.sendEmail, {
         to: notifyEmail,
-        subject: `New inquiry from ${name} — Emerson & Quinn`,
+        subject: `New inquiry from ${name} — From DeHart`,
         html: buildNotificationHtml({ name, email, businessType, message }),
       });
     }

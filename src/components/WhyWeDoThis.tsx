@@ -23,11 +23,11 @@ export default function WhyWeDoThis() {
           <h2 className="text-4xl font-bold text-[var(--brand-dark)]">Why We Do This</h2>
           <div className="w-12 h-1 bg-[var(--brand-teal)] rounded mt-4 mb-6" />
           <p className="text-slate-700 leading-relaxed mb-4">
-            The reason Emerson and Quinn exists goes beyond business: it&apos;s about building a
+            The reason From DeHart exists goes beyond business: it&apos;s about building a
             future where families — like ours and yours — can thrive.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
-            We created Emerson &amp; Quinn because we believe family businesses deserve practical,
+            We created From DeHart because we believe family businesses deserve practical,
             trustworthy guidance as AI reshapes how businesses operate.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
