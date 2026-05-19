@@ -48,12 +48,9 @@ const whyUs = [
   },
 ];
 
-const industries = ["HVAC & Trades", "Landscaping", "Real Estate", "Construction", "Wellness & Fitness", "Property Management", "Retail", "Other"];
-
 function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [businessType, setBusinessType] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -63,7 +60,7 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !email.trim() || !businessType || !message.trim()) {
+    if (!name.trim() || !email.trim() || !message.trim()) {
       setStatus("error");
       setErrorMessage("Please fill in all fields before submitting.");
       return;
@@ -76,7 +73,7 @@ function ContactForm() {
       await submitContact({
         name,
         email,
-        businessType,
+        businessType: "Claude for Small Business",
         message: `${message}\n\n[Source: Claude for Small Business page]`,
       });
       setStatus("success");
@@ -124,21 +121,6 @@ function ContactForm() {
           required
           className="mt-1"
         />
-      </div>
-
-      <div>
-        <Label htmlFor="csb-industry">Industry</Label>
-        <select
-          id="csb-industry"
-          value={businessType}
-          onChange={(e) => setBusinessType(e.target.value)}
-          className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-teal)]"
-        >
-          <option value="" disabled>— Select your industry —</option>
-          {industries.map((i) => (
-            <option key={i} value={i}>{i}</option>
-          ))}
-        </select>
       </div>
 
       <div>
