@@ -11,7 +11,7 @@ export default function AntiSpamPolicy() {
           <div className="h-1 w-14 rounded bg-[var(--brand-teal)] mb-8" />
 
           <p className="text-lg leading-relaxed text-slate-700 mb-10">
-            Vibe Coding from DeHart strictly prohibits the use of unsolicited commercial email
+            From DeHart strictly prohibits the use of unsolicited commercial email
             (spam) to advertise our website, services, or any related content.
           </p>
 
@@ -78,7 +78,7 @@ export default function AntiSpamPolicy() {
             <p className="text-slate-700 leading-relaxed mb-4">
               For legitimate business inquiries or to report spam related to our brand:
             </p>
-            <p className="text-slate-700 font-semibold">Vibe Coding from DeHart</p>
+            <p className="text-slate-700 font-semibold">From DeHart</p>
             <p className="text-slate-700">
               Email:{" "}
               <a
