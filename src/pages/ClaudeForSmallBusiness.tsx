@@ -247,7 +247,7 @@ export default function ClaudeForSmallBusiness() {
             Anthropic just launched Claude for Small Business: AI that plugs directly into QuickBooks, HubSpot, PayPal, and the tools you already use. We configure and deploy it for your business so you're getting value in days, not months.
           </p>
           <a
-            href="#get-started"
+            href="#pricing"
             className="inline-block bg-[var(--brand-teal)] hover:bg-teal-600 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors"
           >
             Packages starting at $249
@@ -360,7 +360,7 @@ export default function ClaudeForSmallBusiness() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-slate-50 py-20 px-6">
+      <section id="pricing" className="bg-slate-50 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-[var(--brand-dark)] text-center mb-4">
             Simple, flat-rate pricing
